@@ -7,7 +7,8 @@ from django.contrib.auth.models import User
 
 def index(request):
 	response = HttpResponse("Aqui esta o texto web")
-	response.write("<h2> <a href='/usuariovalido'>Sou valido</h2>")
+	response.write("<h2> <a href='/usuariovalido'>Sou valido</a></h2>")
+	response.write("<h2><a href='login/'>login</a></h2>")
 	return response
 
 def usuarioValido(request):
@@ -25,4 +26,8 @@ def usuarioValido(request):
 	return response
 
 def login(request):
-	usuario = User.
+	response = HttpResponse()
+	if request.user.is_authenticated():
+		response.write("você está autenticado")
+	else:
+		response.write("efetue o login")
