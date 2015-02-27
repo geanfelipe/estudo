@@ -11,8 +11,8 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', agenda.views.index, name = "index"),
-    url(r'^usuariovalido/', agenda.views.usuarioValido, name = 'usuarioValido')
-    url(r'^login/', agenda.views.login, name= 'login'),
+    url(r'^usuariovalido/', agenda.views.usuarioValido, name = 'usuarioValido'),
+    url(r'^login/', agenda.views.login, name = 'login'),
 
 
 )
